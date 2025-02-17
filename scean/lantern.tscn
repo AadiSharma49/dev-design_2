@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cl806jmwnucfh"]
+
+[ext_resource type="Texture2D" uid="uid://ytnicyyvma5e" path="res://aseets/Street_Lantern.png" id="1_a32t3"]
+
+[sub_resource type="Gradient" id="Gradient_vnjse"]
+offsets = PackedFloat32Array(0, 0.75)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b1mtq"]
+gradient = SubResource("Gradient_vnjse")
+fill = 1
+fill_from = Vector2(0.512, 0.5)
+
+[node name="lantern" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a32t3")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-67, -103)
+scale = Vector2(14.8125, 14.8125)
+color = Color(1, 1, 0.662745, 1)
+energy = 1.5
+shadow_enabled = true
+shadow_color = Color(0.898039, 1, 0.815686, 1)
+texture = SubResource("GradientTexture2D_b1mtq")

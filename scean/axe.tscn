@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdl0c8mymg28r"]
+
+[ext_resource type="Script" path="res://scripts/axe.gd" id="1_e7wjh"]
+[ext_resource type="Texture2D" uid="uid://8teqqxlrfgou" path="res://aseets/rotating axe.png" id="1_ge57g"]
+
+[sub_resource type="Animation" id="Animation_8r6xx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-1.25664]
+}
+
+[sub_resource type="Animation" id="Animation_r4iy2"]
+resource_name = "swing"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-1.25664, 1.25664]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m6oll"]
+_data = {
+"RESET": SubResource("Animation_8r6xx"),
+"swing": SubResource("Animation_r4iy2")
+}
+
+[node name="axe" type="Node2D"]
+rotation = -1.25664
+scale = Vector2(2, 2)
+script = ExtResource("1_e7wjh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, 250)
+texture = ExtResource("1_ge57g")
+hframes = 21
+frame = 6
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-37, 344, 35, 343, 63, 304, 84, 327, 97, 356, 94, 404, 68, 446, 39, 405, -33, 405, -60, 448, -88, 412, -95, 368, -82, 333, -62, 308)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_m6oll")
+}
+autoplay = "swing"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

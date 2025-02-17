@@ -1,0 +1,231 @@
+[gd_scene load_steps=17 format=3 uid="uid://b6alii4530cyh"]
+
+[ext_resource type="Texture2D" uid="uid://dm1w3sik3vy0d" path="res://aseets/coin.png" id="1_6og4u"]
+[ext_resource type="Script" path="res://scripts/health_container.gd" id="2_140wy"]
+[ext_resource type="Texture2D" uid="uid://dwjj3f6wyfe0q" path="res://aseets/health bar/4.png" id="3_2g73w"]
+[ext_resource type="Texture2D" uid="uid://befet6g35sxnw" path="res://aseets/key.png" id="4_2o5no"]
+[ext_resource type="Texture2D" uid="uid://e4qqr07qhgli" path="res://aseets/game  gui.jpg" id="5_05yrv"]
+[ext_resource type="Texture2D" uid="uid://br86l5n87y1j" path="res://aseets/pause_icon.png" id="6_2aowt"]
+[ext_resource type="Texture2D" uid="uid://cefnvyx2dn0ye" path="res://aseets/sprint attack/sprint attack.png" id="7_4o067"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve7u5"]
+atlas = ExtResource("7_4o067")
+region = Rect2(0, 0, 800, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjfwl"]
+atlas = ExtResource("7_4o067")
+region = Rect2(800, 0, 800, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vjli"]
+atlas = ExtResource("7_4o067")
+region = Rect2(1600, 0, 800, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f82ul"]
+atlas = ExtResource("7_4o067")
+region = Rect2(2400, 0, 800, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndvgj"]
+atlas = ExtResource("7_4o067")
+region = Rect2(3200, 0, 800, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35aki"]
+atlas = ExtResource("7_4o067")
+region = Rect2(4000, 0, 800, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5t66"]
+atlas = ExtResource("7_4o067")
+region = Rect2(4800, 0, 800, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oedog"]
+atlas = ExtResource("7_4o067")
+region = Rect2(5600, 0, 800, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_neo8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve7u5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjfwl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vjli")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f82ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndvgj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35aki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5t66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oedog")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+
+[node name="CoinContainer" type="HBoxContainer" parent="."]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 647.0
+offset_bottom = 377.0
+scale = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="CoinContainer"]
+layout_mode = 2
+texture = ExtResource("1_6og4u")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CoinContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 300
+text = "0"
+
+[node name="HealthContainer" type="HBoxContainer" parent="."]
+offset_top = 265.0
+offset_right = 782.0
+offset_bottom = 515.0
+script = ExtResource("2_140wy")
+
+[node name="TextureRect" type="TextureRect" parent="HealthContainer"]
+layout_mode = 2
+texture = ExtResource("3_2g73w")
+expand_mode = 3
+
+[node name="Instruction" type="Label" parent="."]
+offset_left = -25.0
+offset_top = 725.0
+offset_right = 5730.0
+offset_bottom = 1690.0
+theme_override_font_sizes/font_size = 250
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyContainer" type="HBoxContainer" parent="."]
+offset_left = 5.0
+offset_top = 555.0
+offset_right = 420.0
+offset_bottom = 760.0
+
+[node name="TextureRect" type="TextureRect" parent="KeyContainer"]
+layout_mode = 2
+texture = ExtResource("4_2o5no")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="KeyContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 150
+text = "0"
+
+[node name="pause menu" type="TextureRect" parent="."]
+process_mode = 3
+visible = false
+anchors_preset = -1
+anchor_right = 5.0
+anchor_bottom = 5.0
+offset_bottom = 55.0
+texture = ExtResource("5_05yrv")
+
+[node name="home" type="Button" parent="pause menu"]
+process_mode = 3
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.364
+anchor_top = 0.59
+anchor_right = 0.636
+anchor_bottom = 0.692
+offset_left = -1.64014
+offset_top = 0.949829
+offset_right = 1.61938
+offset_bottom = -0.140137
+disabled = true
+
+[node name="restart" type="Button" parent="pause menu"]
+process_mode = 3
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.363
+anchor_top = 0.449
+anchor_right = 0.632
+anchor_bottom = 0.545
+offset_left = -0.880127
+offset_top = 0.544922
+offset_right = -0.3396
+offset_bottom = -0.770142
+disabled = true
+
+[node name="play" type="Button" parent="pause menu"]
+process_mode = 3
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.363
+anchor_top = 0.305
+anchor_right = 0.628
+anchor_bottom = 0.396
+offset_left = -0.880127
+offset_top = 0.0298462
+offset_right = 2.70044
+offset_bottom = 0.175049
+disabled = true
+
+[node name="pause" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 4.765
+anchor_top = 0.054
+anchor_right = 4.99
+anchor_bottom = 0.432
+offset_left = -0.280273
+offset_top = 0.00799942
+offset_right = 0.519531
+offset_bottom = 0.0639954
+texture = ExtResource("6_2aowt")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="pause" type="Button" parent="pause"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.119
+anchor_right = 0.831
+anchor_bottom = 0.959
+offset_left = 0.0599995
+offset_top = -5.0
+offset_right = -0.0600128
+offset_bottom = 0.0449829
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 300
+
+[node name="ChargeContainer" type="HBoxContainer" parent="."]
+offset_top = 810.0
+offset_right = 760.0
+offset_bottom = 1055.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ChargeContainer"]
+position = Vector2(520, 107.5)
+scale = Vector2(1.275, 1.275)
+sprite_frames = SubResource("SpriteFrames_neo8e")
+autoplay = "default"
+frame = 7
+frame_progress = 1.0
+
+[connection signal="pressed" from="pause menu/home" to="HealthContainer" method="_on_home_pressed"]
+[connection signal="pressed" from="pause menu/restart" to="HealthContainer" method="_on_restart_pressed"]
+[connection signal="pressed" from="pause menu/play" to="HealthContainer" method="_on_play_pressed"]
+[connection signal="pressed" from="pause/pause" to="HealthContainer" method="_on_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvcym1i5q4llo"]
+
+[ext_resource type="PackedScene" uid="uid://0ac4yywgy1ue" path="res://scean/tile_map_new.tscn" id="1_8c425"]
+[ext_resource type="PackedScene" uid="uid://rnump7ont8yo" path="res://scean/player.tscn" id="2_f7ql8"]
+[ext_resource type="PackedScene" uid="uid://dod0kx5mnh2co" path="res://scean/kallu.tscn" id="3_qjo0v"]
+[ext_resource type="PackedScene" uid="uid://gr73gsbuv865" path="res://scean/troll.tscn" id="4_lglvo"]
+
+[node name="game_temp" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_8c425")]
+
+[node name="Player" parent="." instance=ExtResource("2_f7ql8")]
+
+[node name="kallu" parent="." instance=ExtResource("3_qjo0v")]
+position = Vector2(30045, 1050)
+
+[node name="troll" parent="." instance=ExtResource("4_lglvo")]
+position = Vector2(8933, 464)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(28360, 951)
+zoom = Vector2(0.3, 0.3)

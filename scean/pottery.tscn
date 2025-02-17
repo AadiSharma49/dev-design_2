@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://cbvttmy47wnac"]
+
+[ext_resource type="Texture2D" uid="uid://bmk6dnxfo55r6" path="res://aseets/backround game/breaking potery.png" id="1_5fafh"]
+[ext_resource type="Script" path="res://scripts/pottery.gd" id="1_yleo6"]
+[ext_resource type="AudioStream" uid="uid://dtv58ukjyjhn7" path="res://aseets/Musics/breaking-a-vase-remix-87091.mp3" id="3_0oc3l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixk0q"]
+atlas = ExtResource("1_5fafh")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw83d"]
+atlas = ExtResource("1_5fafh")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6xj7"]
+atlas = ExtResource("1_5fafh")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4xrm"]
+atlas = ExtResource("1_5fafh")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wnj6y"]
+atlas = ExtResource("1_5fafh")
+region = Rect2(2000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78nrm"]
+atlas = ExtResource("1_5fafh")
+region = Rect2(2500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvvnq"]
+atlas = ExtResource("1_5fafh")
+region = Rect2(3000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcixy"]
+atlas = ExtResource("1_5fafh")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j3s6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixk0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mw83d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6xj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4xrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wnj6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78nrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvvnq")
+}],
+"loop": false,
+"name": &"breaking ",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcixy")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxik8"]
+size = Vector2(236, 320)
+
+[node name="pottery" type="Area2D"]
+script = ExtResource("1_yleo6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_j3s6w")
+animation = &"breaking "
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 43)
+shape = SubResource("RectangleShape2D_sxik8")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0oc3l")
+area_mask = 255
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

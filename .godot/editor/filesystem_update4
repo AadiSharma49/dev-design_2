@@ -1,0 +1,16 @@
+res://scean/kallu.tscn
+res://scripts/player.gd
+res://scean/player.tscn
+res://scean/tile_map_new.tscn
+res://scean/game.tscn
+res://scean/troll.tscn
+res://scean/level.tscn
+res://scean/main_menu.tscn
+res://scean/key.tscn
+res://scean/canvas_layer.tscn
+res://scean/portal.tscn
+res://scean/temple.tscn
+res://scean/game_temp.tscn
+res://scean/temp.tscn
+res://scean/betal.tscn
+res://scean/falling_piller.tscn

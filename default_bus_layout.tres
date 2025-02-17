@@ -1,0 +1,10 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://c11ufwhwh411r"]
+
+[resource]
+bus/0/volume_db = 6.02
+bus/1/name = &"coin"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -15.7883
+bus/1/send = &"Master"

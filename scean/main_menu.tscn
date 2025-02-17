@@ -1,0 +1,503 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbbxn2eo1xxa2"]
+
+[ext_resource type="Texture2D" uid="uid://0vbhxhav7pmx" path="res://aseets/main menu.png" id="1_6fasx"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_vwi1w"]
+[ext_resource type="Texture2D" uid="uid://c4gt87abp6spp" path="res://aseets/video/about game.png" id="3_pm70x"]
+[ext_resource type="Texture2D" uid="uid://dsu1d4n70a5vf" path="res://aseets/video/story.jpg" id="4_6060f"]
+[ext_resource type="Texture2D" uid="uid://cndc7rifxgmmm" path="res://aseets/video/characters.png" id="5_rdypx"]
+[ext_resource type="Texture2D" uid="uid://b6ccuu676osc2" path="res://aseets/video/vikram.png" id="6_8crlv"]
+[ext_resource type="Texture2D" uid="uid://c00kvg2it46ux" path="res://aseets/video/tantrick.png" id="7_beq22"]
+[ext_resource type="Texture2D" uid="uid://coopuykl7c1e6" path="res://aseets/video/Hidimb.png" id="8_3d6qr"]
+[ext_resource type="Texture2D" uid="uid://c2wo4ivvpa5tv" path="res://aseets/video/Betal.png" id="9_15ybh"]
+[ext_resource type="Texture2D" uid="uid://c2rxgpjs2nbmn" path="res://aseets/video/development.png" id="10_2vbw0"]
+[ext_resource type="Texture2D" uid="uid://bal734wpfvgvh" path="res://aseets/video/future plans.png" id="11_dj6ph"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_vwi1w")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = -1.0
+texture = ExtResource("1_6fasx")
+expand_mode = 5
+
+[node name="play" type="Button" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.154
+anchor_top = 0.334
+anchor_right = 0.256
+anchor_bottom = 0.425
+offset_left = -0.869644
+offset_top = 0.00480652
+offset_right = -0.475647
+offset_bottom = -0.0541992
+
+[node name="option" type="Button" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11
+anchor_top = 0.466
+anchor_right = 0.313
+anchor_bottom = 0.557
+offset_left = 0.279991
+offset_top = 0.246246
+offset_right = 0.423981
+offset_bottom = 0.124786
+
+[node name="setiings" type="Button" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.069
+anchor_top = 0.571
+anchor_right = 0.336
+anchor_bottom = 0.68
+offset_left = -0.488007
+offset_top = 0.0291748
+offset_right = -0.0720215
+offset_bottom = 0.213409
+
+[node name="credits" type="Button" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.214
+anchor_top = 0.696
+anchor_right = 0.343
+anchor_bottom = 0.787
+offset_left = 0.471985
+offset_top = -0.18158
+offset_right = -0.136017
+offset_bottom = -0.30304
+
+[node name="about" type="Button" parent="TextureRect"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.805
+anchor_right = 0.304
+anchor_bottom = 0.894
+offset_left = -0.144001
+offset_top = 0.00262451
+offset_right = -0.208008
+offset_bottom = 0.180542
+
+[node name="AboutScreen" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.002
+offset_right = -1.0
+offset_bottom = -0.298035
+texture = ExtResource("3_pm70x")
+expand_mode = 2
+
+[node name="story" type="Button" parent="AboutScreen"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.112
+anchor_top = 0.246
+anchor_right = 0.37
+anchor_bottom = 0.362
+offset_left = -0.0240021
+offset_top = 0.0999908
+offset_right = -0.23999
+offset_bottom = -0.300018
+
+[node name="character" type="Button" parent="AboutScreen"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11
+anchor_top = 0.389
+anchor_right = 0.368
+anchor_bottom = 0.492
+offset_left = 0.279991
+offset_top = 0.149979
+offset_right = 0.0639648
+offset_bottom = 0.199982
+
+[node name="developments" type="Button" parent="AboutScreen"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.111
+anchor_top = 0.528
+anchor_right = 0.37
+anchor_bottom = 0.635
+offset_left = 0.127991
+offset_top = -0.200012
+offset_right = -0.23999
+offset_bottom = 0.249969
+
+[node name="future" type="Button" parent="AboutScreen"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11
+anchor_top = 0.668
+anchor_right = 0.368
+anchor_bottom = 0.772
+offset_left = 0.279991
+offset_top = -0.200043
+offset_right = 0.0639648
+offset_bottom = 0.199982
+
+[node name="AboutScreenBack" type="Button" parent="AboutScreen"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.877
+anchor_right = 0.131
+anchor_bottom = 0.965
+offset_left = 0.287998
+offset_top = -0.0499878
+offset_right = 0.0879822
+offset_bottom = -0.249939
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[node name="story" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_right = -1.0
+offset_bottom = 0.297974
+texture = ExtResource("4_6060f")
+expand_mode = 2
+
+[node name="storyBack" type="Button" parent="story"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.875
+anchor_right = 0.12
+anchor_bottom = 0.969
+offset_left = 0.351999
+offset_top = -6.10352e-05
+offset_right = -0.240005
+offset_bottom = 0.0879517
+theme_override_font_sizes/font_size = 38
+text = "back"
+
+[node name="characters" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.998
+offset_right = -1.0
+offset_bottom = 0.297974
+texture = ExtResource("5_rdypx")
+expand_mode = 2
+
+[node name="vikram" type="Button" parent="characters"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.099
+anchor_right = 0.293
+anchor_bottom = 0.227
+offset_left = -0.200005
+offset_top = -0.152008
+offset_right = -0.536011
+offset_bottom = -0.0960083
+
+[node name="tantrik" type="Button" parent="characters"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.11
+anchor_top = 0.282
+anchor_right = 0.303
+anchor_bottom = 0.41
+offset_left = 0.279991
+offset_top = 0.263992
+offset_right = -0.0559998
+offset_bottom = 0.319977
+
+[node name="betal" type="Button" parent="characters"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.105
+anchor_top = 0.455
+anchor_right = 0.232
+anchor_bottom = 0.588
+offset_left = 0.0399933
+offset_top = 0.160004
+offset_right = -0.264008
+offset_bottom = -0.0239868
+
+[node name="hidimb" type="Button" parent="characters"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.097
+anchor_top = 0.651
+anchor_right = 0.285
+anchor_bottom = 0.784
+offset_left = 0.255997
+offset_top = 0.151978
+offset_right = -0.320038
+offset_bottom = -0.0320129
+
+[node name="home" type="Button" parent="characters"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.013
+anchor_top = 0.894
+anchor_right = 0.122
+anchor_bottom = 0.985
+offset_left = 0.0240002
+offset_top = -0.312012
+offset_right = 0.455994
+offset_bottom = -0.280029
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[node name="vikram" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 0.998
+offset_right = 0.152954
+offset_bottom = 0.297974
+texture = ExtResource("6_8crlv")
+expand_mode = 2
+
+[node name="back" type="Button" parent="vikram"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009
+anchor_top = 0.907
+anchor_right = 0.099
+anchor_bottom = 0.989
+offset_left = -0.280001
+offset_top = 0.439941
+offset_right = 0.919983
+offset_bottom = -0.119995
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[node name="tantrik" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_right = 0.152954
+offset_bottom = -1.0
+texture = ExtResource("7_beq22")
+expand_mode = 2
+
+[node name="tantrikback" type="Button" parent="tantrik"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.813
+anchor_right = 0.153
+anchor_bottom = 0.958
+offset_left = 0.351999
+offset_top = 0.175964
+offset_right = -0.256012
+offset_bottom = 0.215942
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[node name="hidimb" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 0.998
+offset_right = 0.152954
+offset_bottom = 0.297974
+texture = ExtResource("8_3d6qr")
+expand_mode = 2
+
+[node name="hidimbback" type="Button" parent="hidimb"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.031
+anchor_top = 0.821
+anchor_right = 0.175
+anchor_bottom = 0.941
+offset_left = 0.287998
+offset_top = -0.00799561
+offset_right = 0.399994
+offset_bottom = 0.231995
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[node name="betal" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 0.998
+offset_right = 0.152954
+offset_bottom = 0.297974
+texture = ExtResource("9_15ybh")
+expand_mode = 2
+
+[node name="betalback" type="Button" parent="betal"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.037
+anchor_top = 0.844
+anchor_right = 0.128
+anchor_bottom = 0.96
+offset_left = 0.375999
+offset_top = 0.0879517
+offset_right = 0.543991
+offset_bottom = -0.0800171
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[node name="settings" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 0.998
+offset_right = 0.152954
+offset_bottom = 0.297974
+texture = ExtResource("10_2vbw0")
+expand_mode = 2
+
+[node name="SettingsBack" type="Button" parent="settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.033
+anchor_top = 0.785
+anchor_right = 0.164
+anchor_bottom = 0.931
+offset_left = -0.0159988
+offset_top = 0.319977
+offset_right = 0.071991
+offset_bottom = -0.288025
+
+[node name="credits" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 0.998
+offset_right = 0.152954
+offset_bottom = 0.297974
+texture = ExtResource("10_2vbw0")
+expand_mode = 2
+
+[node name="creditsBack" type="Button" parent="credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023
+anchor_top = 0.827
+anchor_right = 0.177
+anchor_bottom = 0.968
+offset_left = -0.496002
+offset_top = 0.104004
+offset_right = 0.095993
+offset_bottom = -0.264038
+theme_override_font_sizes/font_size = 46
+text = "Back"
+
+[node name="future" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 0.998
+offset_right = 0.152954
+offset_bottom = 0.297974
+texture = ExtResource("11_dj6ph")
+expand_mode = 3
+
+[node name="Button" type="Button" parent="future"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.024
+anchor_top = 0.843
+anchor_right = 0.158
+anchor_bottom = 0.957
+offset_left = 0.351999
+offset_top = -0.264038
+offset_right = -0.0160065
+offset_bottom = -0.135986
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[node name="development" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.999
+anchor_bottom = 1.0
+offset_right = 0.152954
+offset_bottom = -1.0
+texture = ExtResource("10_2vbw0")
+expand_mode = 2
+
+[node name="developmentButton" type="Button" parent="development"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.021
+anchor_top = 0.863
+anchor_right = 0.145
+anchor_bottom = 0.954
+offset_left = -0.192001
+offset_top = -0.223999
+offset_right = -0.0400085
+offset_bottom = -0.192017
+theme_override_font_sizes/font_size = 30
+text = "back"
+
+[connection signal="pressed" from="TextureRect/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TextureRect/option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="TextureRect/setiings" to="." method="_on_setiings_pressed"]
+[connection signal="pressed" from="TextureRect/credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="TextureRect/about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="AboutScreen/story" to="." method="_on_story_pressed"]
+[connection signal="pressed" from="AboutScreen/character" to="." method="_on_character_pressed"]
+[connection signal="pressed" from="AboutScreen/developments" to="." method="_on_developments_pressed"]
+[connection signal="pressed" from="AboutScreen/future" to="." method="_on_future_pressed"]
+[connection signal="pressed" from="AboutScreen/AboutScreenBack" to="." method="_on_about_screen_back_pressed"]
+[connection signal="pressed" from="story/storyBack" to="." method="_on_story_back_pressed"]
+[connection signal="pressed" from="characters/vikram" to="." method="_on_vikram_pressed"]
+[connection signal="pressed" from="characters/tantrik" to="." method="_on_tantrik_pressed"]
+[connection signal="pressed" from="characters/betal" to="." method="_on_betal_pressed"]
+[connection signal="pressed" from="characters/hidimb" to="." method="_on_hidimb_pressed"]
+[connection signal="pressed" from="characters/home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="vikram/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="tantrik/tantrikback" to="." method="_on_tantrikback_pressed"]
+[connection signal="pressed" from="hidimb/hidimbback" to="." method="_on_hidimbback_pressed"]
+[connection signal="pressed" from="betal/betalback" to="." method="_on_betalback_pressed"]
+[connection signal="pressed" from="settings/SettingsBack" to="." method="_on_settings_back_pressed"]
+[connection signal="pressed" from="credits/creditsBack" to="." method="_on_credits_back_pressed"]
+[connection signal="pressed" from="future/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="development/developmentButton" to="." method="_on_development_button_pressed"]

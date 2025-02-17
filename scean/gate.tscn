@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://crojx4qcr3oad"]
+
+[ext_resource type="Texture2D" uid="uid://ginxqivc34pr" path="res://aseets/gate 1.png" id="1_4cjx0"]
+[ext_resource type="Texture2D" uid="uid://b5qkq50vjecew" path="res://aseets/gate 2.png" id="2_8xmx4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 2
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_4cjx0")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = -1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_8xmx4")

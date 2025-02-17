@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3jw8qvdt8o1c"]
+
+[ext_resource type="Texture2D" uid="uid://b6w3wvlwx8dj" path="res://aseets/castle backround pillers.png" id="1_ouxfd"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y6uyd"]
+polygon = PackedVector2Array(-386, -940, -919, -939, -920, -881, -921, -866, -953, -860, -952, -843, -918, -843, -886, -771, -842, -742, -805, -718, -807, -697, -763, -685, -758, -542, -646, -532, -634, -511, -643, 522, -687, 578, -739, 603, -766, 613, -797, 713, -853, 718, -870, 774, -887, 825, -937, 817, -937, 831, -175, 835, -185, 807, -206, 783, -277, 801, -317, 763, -312, 730, -319, 674, -382, 661, -379, 626, -396, 578, -454, 569, -500, 527, -496, 476, -504, -515, -445, -529, -394, -532, -378, -656, -342, -693, -323, -739, -282, -772, -216, -770, -212, -872, -374, -875)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_y6uyd")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+position = Vector2(1234, 0)
+occluder = SubResource("OccluderPolygon2D_y6uyd")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+position = Vector2(2523, 7)
+occluder = SubResource("OccluderPolygon2D_y6uyd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(658.778, -139.75)
+scale = Vector2(1.85694, 1.85694)
+texture = ExtResource("1_ouxfd")
