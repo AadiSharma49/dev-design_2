@@ -124,7 +124,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		for body in attack_area.get_overlapping_bodies():
 			if body.is_in_group("player"):
 				var attack_direction = (body.global_position - global_position).normalized()
-				body.take_damage(1,-1*attack_direction)
+				body.take_damage(1)
 		is_attacking = false
 		is_running = true
 	elif animated_sprite_2d.animation == "die":

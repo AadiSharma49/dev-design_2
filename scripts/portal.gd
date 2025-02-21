@@ -19,13 +19,13 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if not is_activated:
 		if body.is_class("CharacterBody2D"):
-			if body.keys>=1:
+			if body.keys>=4:
 				is_activated= true
 				print("player detected")
 				animated_sprite_2d.play("open")
 			else:
 				#print(key_count)
-				body.show_ins("you need to find key to open these portal")
+				body.show_ins("you need to find 4 keys to open these portal")
 				#ins.text=str("lyou need to find key to open these portda")
 				
 

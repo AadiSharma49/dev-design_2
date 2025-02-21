@@ -1,11 +1,11 @@
+Label
+CollisionShape2D
 AnimatedSprite2D
 HBoxContainer
 Timer
-CollisionShape2D
 AnimationPlayer
 Sprite2D
 Area2D
-Label
 TextureRect
 Button
 VideoStreamPlayer

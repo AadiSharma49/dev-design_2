@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://b3mnfsqnla4ti"]
+[gd_scene load_steps=39 format=3 uid="uid://b3mnfsqnla4ti"]
 
 [ext_resource type="Texture2D" uid="uid://b1d3lchibnscl" path="res://aseets/castle backround.png" id="1_lyvp0"]
 [ext_resource type="Script" path="res://scripts/temple.gd" id="1_s7jl3"]
@@ -14,9 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b3jw8qvdt8o1c" path="res://scean/pillers with shadow.tscn" id="12_fcydk"]
 [ext_resource type="PackedScene" uid="uid://crojx4qcr3oad" path="res://scean/gate.tscn" id="12_flu2v"]
 [ext_resource type="AudioStream" uid="uid://67rh7n2otokj" path="res://aseets/Musics/Slow Sitar & Tabla Indian Music (No Copyright).mp3" id="14_vwmyi"]
-[ext_resource type="PackedScene" uid="uid://dod0kx5mnh2co" path="res://scean/kallu.tscn" id="16_gy4f4"]
 [ext_resource type="PackedScene" uid="uid://2qa35uiwrfdt" path="res://scean/heal.tscn" id="16_y0x2o"]
-[ext_resource type="PackedScene" uid="uid://crg3ttna6tdrc" path="res://scean/falling_piller.tscn" id="17_840r1"]
 
 [sub_resource type="Gradient" id="Gradient_3kc7p"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -990,6 +988,7 @@ scale = Vector2(2, 2)
 zoom = Vector2(0.3, 0.3)
 limit_left = -2800
 limit_top = -1300
+limit_right = 9030
 limit_bottom = 1300
 rotation_smoothing_enabled = true
 
@@ -1192,18 +1191,6 @@ position = Vector2(-279, 958)
 
 [node name="healing_bottle" parent="." instance=ExtResource("16_y0x2o")]
 position = Vector2(635, 994)
-
-[node name="kallu" parent="." instance=ExtResource("16_gy4f4")]
-position = Vector2(1014, 1054)
-
-[node name="kallu2" parent="." instance=ExtResource("16_gy4f4")]
-position = Vector2(99, 1047)
-
-[node name="kallu3" parent="." instance=ExtResource("16_gy4f4")]
-position = Vector2(1539, 1047)
-
-[node name="Area2D2" parent="." instance=ExtResource("17_840r1")]
-position = Vector2(-1015, 712)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_entered" from="tantrik2" to="." method="_on_tantrik_2_body_entered"]

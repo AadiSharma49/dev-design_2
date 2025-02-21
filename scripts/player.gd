@@ -24,7 +24,7 @@ var last_save_point: Vector2 = Vector2(-4150, 906)
 var push_speed = 500
 var knock_backing=false
 var dash_active=true
-
+var keys=0
 # Nodes
 @onready var audio_stream_player_2d_2: AudioStreamPlayer2D = $AudioStreamPlayer2D2
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
@@ -37,6 +37,7 @@ var dash_active=true
 @onready var audio_stream_player_2d_sword: AudioStreamPlayer2D = $AudioStreamPlayer2D3
 @onready var timer: Timer = $Timer
 @onready var animated_sprite_2d: AnimatedSprite2D = $"CanvasLayer/ChargeContainer/AnimatedSprite2D"
+@onready var label: Label = $"CanvasLayer/KeyContainer/Label"
 
 
 
@@ -57,6 +58,8 @@ func take_damage(amount: int,direct=null,) -> void:
 	if dying:
 		return
 	health -= amount
+	dying=true
+	animated_sprite.play("die")
 	health = max(health, 0)
 	health_container.update_items(health)
 	GameData.health = health
@@ -93,12 +96,6 @@ func die() -> void:
 	animated_sprite.play("die")
 	audio_stream_player_2d.play()
 	
-	#health = 5
-	#position = GameData.save_point
-	#GameData.health = health
-	#health_container.update_items(health)
-	#animated_sprite.play("idle")
-
 func _physics_process(delta: float) -> void:
 	if not knock_backing and not dashing:
 		velocity.x = 0
@@ -216,8 +213,6 @@ func update_animations() -> void:
 			if not audio_stream_player_2d_2.playing:  
 				audio_stream_player_2d_2.play()  # Play sound if not already playing
 
-
-
 func _on_animated_sprite_2d_animation_finished() -> void:
 	#print("animation finished:  "+ animated_sprite.animation)
 	if animated_sprite.animation == "spawn":
@@ -230,17 +225,29 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		knock_backing=false
 		velocity.x=0
 	if animated_sprite.animation == "die":
-		audio_stream_player_2d.stop()
-		dead=true
-		dying=false
-		print("die animation finish")
-		health = 5
-		position = GameData.save_point
-		GameData.health = health
-		health_container.update_items(health)
-		animated_sprite.play("spawn")
-		spawning=true
-
+		if health>0:
+			position = GameData.save_point
+			dying=false
+			dead=true
+			animated_sprite.play("spawn")
+		else:
+			audio_stream_player_2d.stop()
+			dead=true
+			dying=false
+			print("die animation finish")
+			health = 5
+			position = GameData.save_point
+			GameData.health = health
+			health_container.update_items(health)
+			animated_sprite.play("spawn")
+			spawning=true
 
 func _on_timer_timeout() -> void:
 	dash_active=true
+
+func take_key() -> void:
+	keys+=1
+	label.text=str(keys)
+func show_ins(ins: String) -> void:
+	print(ins)
+	$CanvasLayer/Label.text=ins
