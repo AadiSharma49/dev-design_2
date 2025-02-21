@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cijti4yk4uil8"]
+[gd_scene load_steps=19 format=3 uid="uid://cijti4yk4uil8"]
 
 [ext_resource type="Script" path="res://scripts/save_point.gd" id="1_2w2ir"]
 [ext_resource type="Texture2D" uid="uid://q0uys5nn2las" path="res://aseets/save point sprite set.png" id="1_3gmrd"]
 [ext_resource type="Texture2D" uid="uid://cxplg7mkn0bf5" path="res://aseets/unsaved save point.png" id="2_h8rkv"]
+[ext_resource type="AudioStream" uid="uid://cf45ayr5euwnb" path="res://aseets/Musics/ringtone-193209.mp3" id="4_gj0ku"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j2q3k"]
 atlas = ExtResource("1_3gmrd")
@@ -120,5 +121,8 @@ frame_progress = 0.535381
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, -49.4375)
 shape = SubResource("RectangleShape2D_3evfd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gj0ku")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

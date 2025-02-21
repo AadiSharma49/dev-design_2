@@ -331,7 +331,6 @@ frame_progress = 1.0
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, 250)
-enabled = false
 target_position = Vector2(286, 0)
 
 [node name="AttackArea" type="Area2D" parent="."]

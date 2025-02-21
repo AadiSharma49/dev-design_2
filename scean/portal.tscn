@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://c10yc7p30dgju"]
+[gd_scene load_steps=29 format=3 uid="uid://c10yc7p30dgju"]
 
 [ext_resource type="Script" path="res://scripts/portal.gd" id="1_j12me"]
 [ext_resource type="Texture2D" uid="uid://i3odult4w3f8" path="res://aseets/gate rotating.png" id="2_yv751"]
 [ext_resource type="Texture2D" uid="uid://br0atump4thbc" path="res://aseets/default gate.png" id="3_amk0r"]
 [ext_resource type="Texture2D" uid="uid://bqb22y20by8xv" path="res://aseets/gate start.png" id="4_36blo"]
+[ext_resource type="AudioStream" uid="uid://c71xv86y1hwwf" path="res://aseets/Musics/opening_Portal.mp3" id="5_123wc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vp1ca"]
 atlas = ExtResource("3_amk0r")
@@ -184,6 +185,9 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, -1)
 shape = SubResource("RectangleShape2D_ui2b4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_123wc")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

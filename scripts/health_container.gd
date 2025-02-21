@@ -60,6 +60,7 @@ func _on_restart_pressed() -> void:
 	restart.disabled=true
 	home.disabled=true
 	get_tree().change_scene_to_file("res://scean/temple.tscn")
+	GameData.save_point= Vector2(-1600, 1034)
 
 func _on_home_pressed() -> void:
 	get_tree().paused=false

@@ -1,5 +1,5 @@
-res://scean/kallu.tscn
 res://scean/player.tscn
+res://scean/kallu.tscn
 res://scean/tile_map_new.tscn
 res://scean/game.tscn
 res://scean/troll.tscn
@@ -12,3 +12,12 @@ res://scean/temple.tscn
 res://scean/temp.tscn
 res://scean/betal.tscn
 res://scean/falling_piller.tscn
+res://scripts/player.gd
+res://scean/save_point.tscn
+res://scripts/save_point.gd
+res://scripts/coin.gd
+res://default_bus_layout.tres
+res://scripts/health_container.gd
+res://scripts/key.gd
+res://scripts/portal.gd
+res://scripts/troll.gd

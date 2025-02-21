@@ -1,7 +1,17 @@
-[gd_resource type="AudioBusLayout" format=3 uid="uid://c11ufwhwh411r"]
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://c11ufwhwh411r"]
+
+[sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_q4343"]
+resource_name = "HardLimiter"
+
+[sub_resource type="AudioEffectHardLimiter" id="AudioEffectHardLimiter_acj18"]
+resource_name = "HardLimiter"
 
 [resource]
 bus/0/volume_db = 6.02
+bus/0/effect/0/effect = SubResource("AudioEffectHardLimiter_q4343")
+bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource("AudioEffectHardLimiter_acj18")
+bus/0/effect/1/enabled = true
 bus/1/name = &"coin"
 bus/1/solo = false
 bus/1/mute = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://rnump7ont8yo"]
+[gd_scene load_steps=110 format=3 uid="uid://rnump7ont8yo"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_7dt1x"]
 [ext_resource type="Texture2D" uid="uid://rsgpnjt0qcbb" path="res://aseets/new attack.png" id="2_ypei8"]
@@ -12,8 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://b6alii4530cyh" path="res://scean/canvas_layer.tscn" id="7_7frst"]
 [ext_resource type="Texture2D" uid="uid://inr7fe7j4h38" path="res://aseets/backround game/vikram swapn animation.png" id="7_sovgr"]
 [ext_resource type="AudioStream" uid="uid://bp3pffrar0up2" path="res://aseets/Musics/ahhhhh-cartoon-death-scream-dan-barracuda-1-00-03.mp3" id="12_8cego"]
-[ext_resource type="AudioStream" uid="uid://cseicpyfmkg5t" path="res://aseets/Musics/footsteps_grass_1-6810.mp3" id="13_kuc2e"]
-[ext_resource type="AudioStream" uid="uid://dalrpq5883xyb" path="res://aseets/Musics/sword-slash-and-swing-185432.mp3" id="14_bhl7l"]
+[ext_resource type="AudioStream" uid="uid://c6euy0naan83a" path="res://aseets/Musics/walking-on-leaves-260279.mp3" id="13_7kipv"]
+[ext_resource type="AudioStream" uid="uid://bgepyw3aa4elw" path="res://aseets/Musics/sword-sound-260274.mp3" id="14_7rjmx"]
+[ext_resource type="AudioStream" uid="uid://5ma8xioa3afu" path="res://aseets/Musics/male_hurt7-48124.mp3" id="15_6nwrl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dq12d"]
 atlas = ExtResource("2_ypei8")
@@ -489,7 +490,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"die",
-"speed": 8.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -527,7 +528,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"idle",
-"speed": 11.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -603,7 +604,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"knockback",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -641,7 +642,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"spawn",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -706,7 +707,7 @@ y_sort_enabled = true
 position = Vector2(-3.99998, -214)
 scale = Vector2(1.02, 1.088)
 sprite_frames = SubResource("SpriteFrames_mweod")
-animation = &"dash"
+animation = &"walk"
 autoplay = "spawn"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -772,16 +773,22 @@ theme_override_font_sizes/font_size = 150
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_8cego")
+area_mask = 255
 
 [node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("13_kuc2e")
+stream = ExtResource("13_7kipv")
 volume_db = 2.667
 
 [node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("14_bhl7l")
+stream = ExtResource("14_7rjmx")
+volume_db = 6.667
+pitch_scale = 1.05
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 7.0
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_6nwrl")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
